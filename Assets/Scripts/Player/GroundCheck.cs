@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
-    public int m_ColCount = 0;
+    public int m_ColCount { get; private set; }
 
-    public float m_DisableTimer;
+    public float m_DisableTimer { get; private set; }
 
     private void OnEnable()
     {

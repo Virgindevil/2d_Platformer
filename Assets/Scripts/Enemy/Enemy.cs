@@ -3,10 +3,12 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] private float _HealthPoints = 100f;
+    [SerializeField] private float _healthPoints = 100f;
+    [SerializeField] private float _timeToReturnBaseColor = 1f;
     
     private SpriteRenderer _spriteRenderer;
     private Color _baseColor;
+    private float _timeToBaseColor;
     
     void Start()
     {
@@ -16,19 +18,22 @@ public class Enemy : MonoBehaviour
     
     public void GetHurt(float damage)
     {
-        _HealthPoints -= damage;
+        _healthPoints -= damage;
         _spriteRenderer.color = Color.red;
-        Debug.Log(_HealthPoints);
+        _timeToBaseColor = _timeToReturnBaseColor;
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (_spriteRenderer.color != _baseColor)
+        if (_timeToBaseColor >= 0)
+            _timeToBaseColor -= Time.deltaTime;
+        
+        if (_spriteRenderer.color != _baseColor && _timeToBaseColor <= 0)
         {
             _spriteRenderer.color = _baseColor;
         }
         
-        if (_HealthPoints <= 0)   
+        if (_healthPoints <= 0)   
             Destroy(gameObject);
     }
 }

@@ -10,10 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 8528810007747297541}
   - component: {fileID: 2077783054533952970}
+  - component: {fileID: 6934724341642538716}
   - component: {fileID: 6973798187889870516}
   - component: {fileID: 9093334150083978722}
   - component: {fileID: 4680169648022943283}
-  - component: {fileID: 6934724341642538716}
+  - component: {fileID: -6965436742816405606}
+  - component: {fileID: 5126449014172936310}
+  - component: {fileID: 640076674711109676}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -33,8 +36,7 @@ Transform:
   m_LocalPosition: {x: -5.578, y: -1.199, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2095405053297995771}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2077783054533952970
@@ -89,6 +91,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &6934724341642538716
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785119832216970321}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3c2a5b7097b0fe44394328c0bdb9252e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!70 &6973798187889870516
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -98,7 +121,7 @@ CapsuleCollider2D:
   m_GameObject: {fileID: 1785119832216970321}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: f397558229ac980409016f90f9215164, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -165,110 +188,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveSpeed: 4
   _jumpForce: 8
-  _lightAttackPrefab: {fileID: 8017802263626291779, guid: e36a30d8c5f1aa54c801eb76cb864d0c, type: 3}
-  _lightAttackTriggerSpawnPosition: {x: 0.9, y: 0.9, z: 0}
-  _heavyAttackPrefab: {fileID: 4113958819429709067, guid: 5e84655e2da97f5499b5300f5b57e2e9, type: 3}
-  _heavyAttackTriggerSpawnPosition: {x: 0.9, y: 0.8, z: 0}
---- !u!95 &6934724341642538716
-Animator:
-  serializedVersion: 5
+--- !u!114 &-6965436742816405606
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1785119832216970321}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3c2a5b7097b0fe44394328c0bdb9252e, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
---- !u!1 &6636480442752675603
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2095405053297995771}
-  - component: {fileID: 6265996993182304235}
-  - component: {fileID: 3574147188388235089}
-  m_Layer: 3
-  m_Name: GroundTrigger
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2095405053297995771
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636480442752675603}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 1
-  m_Children: []
-  m_Father: {fileID: 8528810007747297541}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!58 &6265996993182304235
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636480442752675603}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
---- !u!114 &3574147188388235089
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dab7e65b3049e3b43ba2d1088f90f81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxSecondsAfterAttack: 5
+  _minSecondsAfterAttack: 0.4
+  _SecondsToDropAttackRate: 1
+  _lightAttackPrefab: {fileID: 8017802263626291779, guid: e36a30d8c5f1aa54c801eb76cb864d0c, type: 3}
+  _lightAttackTriggerSpawnPosition: {x: 0.9, y: 0.9, z: 0}
+  _heavyAttackPrefab: {fileID: 4113958819429709067, guid: 5e84655e2da97f5499b5300f5b57e2e9, type: 3}
+  _heavyAttackTriggerSpawnPosition: {x: 0.9, y: 0.8, z: 0}
+--- !u!114 &5126449014172936310
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6636480442752675603}
+  m_GameObject: {fileID: 1785119832216970321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee2b47aac36b55f48a19fd19d1b8a787, type: 3}
+  m_Script: {fileID: 11500000, guid: ca3b6d020703aef4792d5e835b19aa22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ColCount: 0
-  m_DisableTimer: 0
+--- !u!114 &640076674711109676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1785119832216970321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd536f4d8141bd241bb3efb3a7e0bfde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gronudLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  _castDistanse: 0.1

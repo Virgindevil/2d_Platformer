@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8023376493441578655}
   - component: {fileID: 3434020566485430099}
   - component: {fileID: 8781232743141170189}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,7 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf323630af62ea6418c8aa5ab18d402b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _HealthPoints: 50
+  _healthPoints: 100
+  _timeToReturnBaseColor: 0.5
 --- !u!114 &8781232743141170189
 MonoBehaviour:
   m_ObjectHideFlags: 0

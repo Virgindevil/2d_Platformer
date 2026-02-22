@@ -347,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 814515983}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Coins
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -509,13 +509,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6973798187889870516, guid: 3390040f15ec5f449aa254b8e4585871, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: f397558229ac980409016f90f9215164, type: 2}
     - target: {fileID: 8528810007747297541, guid: 3390040f15ec5f449aa254b8e4585871, type: 3}
       propertyPath: m_LocalPosition.x
       value: -5.578
       objectReference: {fileID: 0}
     - target: {fileID: 8528810007747297541, guid: 3390040f15ec5f449aa254b8e4585871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.199
+      value: -1.21
       objectReference: {fileID: 0}
     - target: {fileID: 8528810007747297541, guid: 3390040f15ec5f449aa254b8e4585871, type: 3}
       propertyPath: m_LocalPosition.z

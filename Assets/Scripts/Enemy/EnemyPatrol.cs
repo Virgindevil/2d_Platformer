@@ -6,24 +6,27 @@ public class EnemyPatrol : MonoBehaviour
     [SerializeField] private float _patrolSpeed = 2f;
     [SerializeField] private float _wallCheckDistance = 0.6f;
     [SerializeField] private LayerMask _wallLayer;
-    
-    private bool _moveRight = true;
-    private Rigidbody2D _rb;
 
-    private void Start() => _rb = GetComponent<Rigidbody2D>();
+    private Vector2 direction;
+    private float xDirection;
+    private bool _moveRight = true;
+    private Rigidbody2D _rigidbody2D;
+
+    private void Start() => _rigidbody2D = GetComponent<Rigidbody2D>();
+
+    private void Update()
+    {
+        direction = _moveRight ? Vector2.right : Vector2.left;
+        xDirection = _moveRight ? 1 : -1;
+    }
+
 
     private void FixedUpdate()
     {
-        // Проверяем стену впереди
-        Vector2 direction = _moveRight ? Vector2.right : Vector2.left;
-        
         if (Physics2D.Raycast(transform.position, direction, _wallCheckDistance, _wallLayer))
         {
-            _moveRight = !_moveRight; // Меняем направление
+            _moveRight = !_moveRight; 
         }
-
-        // Движение
-        float xDirection = _moveRight ? 1 : -1;
-        _rb.velocity = new Vector2(xDirection * _patrolSpeed, _rb.velocity.y);
+        _rigidbody2D.velocity = new Vector2(xDirection * _patrolSpeed, _rigidbody2D.velocity.y);
     }
 }

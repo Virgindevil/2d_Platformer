@@ -8,16 +8,18 @@ using UnityEngine;
 public class PlayerController2D : MonoBehaviour
 {
     [SerializeField] private float _moveSpeed;
-    [SerializeField]public float _jumpForce = 10;
-    
+    [SerializeField] private float _jumpForce = 8;    
    
     private Rigidbody2D _rigidbody2D;
     private SpriteRenderer _spriteRenderer;
-    public PlayerGroundCheck _groundCheck { get; private set; }
-    
-    public float inputX { get; private set; }
+    private PlayerGroundCheck _groundCheck;
     private int _facingDirection = 0;
-    public bool _isGrounded { get; private set; }
+    private const string InputXName = "Horizontal";
+    private const string InputJumpName = "space";
+    
+    public float InputX { get; private set; }
+    
+    public bool IsGrounded { get; private set; }
 
     private void Awake()
     {
@@ -28,34 +30,34 @@ public class PlayerController2D : MonoBehaviour
     
     void Update ()
     {
-        if (!_isGrounded && _groundCheck.State())
+        if (!IsGrounded && _groundCheck.State())
         {
-            _isGrounded = true;
+            IsGrounded = true;
         }
 
-        if (_isGrounded && !_groundCheck.State())
+        if (IsGrounded && !_groundCheck.State())
         {
-            _isGrounded = false;
+            IsGrounded = false;
         }
         
         
-        inputX = Input.GetAxis("Horizontal");
+        InputX = Input.GetAxis(InputXName);
 
-        if (inputX > 0)
+        if (InputX > 0)
         {
             _spriteRenderer.flipX = false;
             _facingDirection = 1;
         }
             
-        else if (inputX < 0)
+        else if (InputX < 0)
         {
             _spriteRenderer.flipX = true;
             _facingDirection = -1;
         }
         
-        if (Input.GetKeyDown("space") && _isGrounded)
+        if (Input.GetKeyDown(InputJumpName) && IsGrounded)
         {
-            _isGrounded = false;
+            IsGrounded = false;
             _rigidbody2D.velocity = new Vector2(RigidbodyVelocityY, _jumpForce);
             _groundCheck.Disable(0.2f);
         }
@@ -63,7 +65,7 @@ public class PlayerController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _rigidbody2D.velocity = new Vector2(inputX * _moveSpeed, _rigidbody2D.velocity.y);
+        _rigidbody2D.velocity = new Vector2(InputX * _moveSpeed, _rigidbody2D.velocity.y);
     }
     
     public float RigidbodyVelocityX

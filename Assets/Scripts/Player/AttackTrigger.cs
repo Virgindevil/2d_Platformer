@@ -16,7 +16,7 @@ public class AttackTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.TryGetComponent<Enemy>(out Enemy enemy))
+        if (other.TryGetComponent(out Enemy enemy))
         {
             enemy.GetHurt(_attackDamage);
             Destroy(gameObject);

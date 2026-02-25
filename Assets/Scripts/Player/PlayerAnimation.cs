@@ -20,16 +20,16 @@ public class PlayerAnimation : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetBool("Grounded", _playerController._isGrounded);
+        _animator.SetBool("Grounded", _playerController.IsGrounded);
         _animator.SetFloat("AirSpeedY", _playerController.RigidbodyVelocityY);
         
 
-        if (Input.GetKeyDown("space") && _playerController._isGrounded)
+        if (Input.GetKeyDown("space") && _playerController.IsGrounded)
         {
             _animator.SetTrigger("Jump");
         }
 
-        if (Mathf.Abs(_playerController.inputX) > Mathf.Epsilon)
+        if (Mathf.Abs(_playerController.InputX) > Mathf.Epsilon)
         {
             _delayToIdle = 0.05f;
             _animator.SetInteger("AnimState", 1);

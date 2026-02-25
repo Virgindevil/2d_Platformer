@@ -117,4 +117,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _attackDamage: 5
-  _TriggerLifeTime: 2
+  _TriggerLifeTime: 0.1
